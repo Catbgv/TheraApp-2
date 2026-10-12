@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Fraunces', Georgia, serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
+
+  .font-serif,
+  .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 113, 108, 0.35);
+}
+
+/* Flowing cloud animations */
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translate3d(-10%, 0, 0);
+  }
+  50% {
+    transform: translate3d(8%, -15px, 0);
+  }
+  100% {
+    transform: translate3d(-10%, 0, 0);
+  }
+}
+
+@keyframes cloudDriftMedium {
+  0% {
+    transform: translate3d(5%, 0, 0);
+  }
+  50% {
+    transform: translate3d(-12%, 18px, 0);
+  }
+  100% {
+    transform: translate3d(5%, 0, 0);
+  }
+}
+
+@keyframes cloudDriftFast {
+  0% {
+    transform: translate3d(-5%, -5px, 0);
+  }
+  50% {
+    transform: translate3d(15%, 10px, 0);
+  }
+  100% {
+    transform: translate3d(-5%, -5px, 0);
+  }
+}
+
+@keyframes orbGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px 10px rgba(104, 172, 179, 0.35), 0 0 80px 25px rgba(182, 224, 226, 0.25);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 55px 18px rgba(104, 172, 179, 0.5), 0 0 110px 40px rgba(182, 224, 226, 0.38);
+  }
+}
+
+.animate-cloud-slow {
+  animation: cloudDriftSlow 42s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-cloud-medium {
+  animation: cloudDriftMedium 32s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-cloud-fast {
+  animation: cloudDriftFast 24s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-orb-glow {
+  animation: orbGlow 5s ease-in-out infinite;
+}
+
+/* Safe area insets for mobile */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}

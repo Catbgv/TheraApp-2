@@ -1,0 +1,6 @@
+{
+  "name": "TheraApp",
+  "description": "Structured self-reflection and mental wellness prototype informed by Cognitive Behavioral Therapy principles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
